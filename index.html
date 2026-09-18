@@ -1,86 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EXC HUN VBL CLUB</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="nav">
-  <div class="brand">EXC <span>HUN VBL CLUB</span></div>
-  <nav>
-    <a href="#home">Főoldal</a><a href="#ranking">Ranglista</a>
-    <a href="#codes">Kódok</a><a href="#updates">Update-ek</a><a href="#staff">Staff</a>
-  </nav>
-  <a class="btn" href="https://discord.com/" target="_blank">💬 Csatlakozz Discordra</a>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">ROBLOX • VOLLEYBALL LEGENDS</div>
+    <h1>EXC HUN VBL CLUB</h1>
+    <p>Magyar Volleyball Legends közösség</p>
+    <a class="dc-btn" href="https://discord.gg/tEkWNzSJa" target="_blank" rel="noopener">💬 Csatlakozás Discordhoz</a>
+  </div>
 </header>
 
-<main id="home">
+<nav class="nav">
+  <a href="#home">Főoldal</a>
+  <a href="#update">UPDATE</a>
+  <a href="#codes">VBL KÓDOK</a>
+  <a href="#staff">STAFF</a>
+</nav>
 
-<section id="update" class="section">
-  <h2>🥷 Új Update – Ronin</h2>
-  <p class="update-text">Megérkezett a Ronin Update!</p>
-  <div class="update-codes">
-    <div><code>RONIN_RETURN</code><span>5 Lucky Style Spins</span></div>
-    <div><code>KATANA</code><span>5 Lucky Ability Spins</span></div>
-  </div>
-</section>
-<section class="hero">
-  <div>
-    <p class="tag">ROBLOX • VOLLEYBALL LEGENDS</p>
-    <h1>EXC HUN<br><strong>VBL CLUB</strong></h1>
-    <p>Egy közösség. Egy cél. A fejlődés.</p>
-    <a class="btn big" href="https://discord.com/" target="_blank">Discord szerver →</a>
-  </div>
-</section>
+<main id="home" class="container">
+  <section class="welcome">
+    <h2>Üdv az EXC HUN VBL CLUB-ban!</h2>
+    <p>Itt megtalálod a legújabb Ronin update-et, a VBL kódokat és a szerver staffját.</p>
+  </section>
 
-<section class="stats">
-  <div><b>1,248</b><span>Játékos</span></div>
-  <div><b>#1</b><span>Magyar VBL közösség</span></div>
-  
-  <div><b>Aktív</b><span>Közösség</span></div>
-</section>
+  <section id="update" class="card clickable">
+    <a href="#ronin" class="card-link">
+      <div class="icon">🥷</div>
+      <div>
+        <h2>UPDATE</h2>
+        <p>Kattints az új update megtekintéséhez.</p>
+      </div>
+    </a>
+  </section>
 
-<section class="grid two">
-  <article class="card">
-    <p class="tag">VBL COMMUNITY</p>
-    <h2>Üdv a szerverünkön!</h2>
-    <p>Az EXC HUN VBL CLUB célja egy aktív, összetartó és fejlődni vágyó Volleyball Legends közösség építése. Itt megtalálod a fontos információkat, ranglistákat, kódokat és update-eket.</p>
-    <a class="btn" href="#codes">Fedezd fel →</a>
-  </article>
-  <article class="card" id="updates">
-    <h2>🔥 Legfrissebb hírek</h2>
-    <div class="news"><b>VBL Update</b><span>Új kódok és újdonságok</span></div>
-  </article>
-</section>
+  <section id="ronin" class="detail">
+    <div class="tag">NEW UPDATE</div>
+    <h2>🥷 Ronin</h2>
+    <p>Az új Volleyball Legends update: <strong>Ronin</strong>.</p>
+  </section>
 
+  <section id="codes" class="card clickable">
+    <a href="#code-list" class="card-link">
+      <div class="icon">🎟️</div>
+      <div>
+        <h2>VBL KÓDOK</h2>
+        <p>Kattints ide a jelenlegi kódok megtekintéséhez.</p>
+      </div>
+    </a>
+  </section>
 
+  <section id="code-list" class="detail">
+    <div class="tag">NEW CODES</div>
+    <h2>🎟️ VBL Kódok</h2>
+    <div class="code-list">
+      <div class="code-row">
+        <code>UPDATE_87</code><span>5 Lucky Style Spins</span>
+        <button onclick="copyCode('UPDATE_87')">Másolás</button>
+      </div>
+      <div class="code-row">
+        <code>RONIN_RETURN</code><span>5 Lucky Style Spins</span>
+        <button onclick="copyCode('RONIN_RETURN')">Másolás</button>
+      </div>
+      <div class="code-row">
+        <code>KATANA</code><span>5 Lucky Ability Spins</span>
+        <button onclick="copyCode('KATANA')">Másolás</button>
+      </div>
+    </div>
+  </section>
 
-<h2>Aktuális VBL kódok</h2>
-<div class="codes">
-  <div class="code-card"><code>UPDATE_87</code><span>5 Lucky Style Spins</span><button onclick="copyCode('UPDATE_87')">Másolás</button></div>
-  <div class="code-card"><code>RONIN_RETURN</code><span>5 Lucky Style Spins</span><button onclick="copyCode('RONIN_RETURN')">Másolás</button></div>
-  <div class="code-card"><code>KATANA</code><span>5 Lucky Ability Spins</span><button onclick="copyCode('KATANA')">Másolás</button></div>
-</div>
-</section>
+  <section id="staff" class="staff-section">
+    <h2>STAFF</h2>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="role">OWNER</div>
+        <div class="name">Exc_Kevin</div>
+      </div>
+      <div class="staff-card">
+        <div class="role">DEVELOPER</div>
+        <div class="name">Exc_Kevin</div>
+      </div>
+    </div>
+  </section>
 
-<section class="content-section" id="staff">
-  <div class="section-head">
-    <p class="tag">EXC HUN VBL CLUB</p>
-    <h2>👥 Staff csapat</h2>
-    <p>Itt jelennek meg az EXC HUN VBL CLUB staff tagjai és szerepkörei.</p>
-  </div>
-  <div class="staff-grid">
-    <div class="staff-card"><b>Owner</b><span>Hamarosan</span></div>
-    <div class="staff-card"><b>Administrator</b><span>Hamarosan</span></div>
-    <div class="staff-card"><b>Moderator</b><span>Hamarosan</span></div>
-    <div class="staff-card"><b>Developer</b><span>Hamarosan</span></div>
-  </div>
-</section>
+  <a class="dc-wide" href="https://discord.gg/tEkWNzSJa" target="_blank" rel="noopener">
+    💬 Discord szerver megnyitása
+  </a>
 </main>
 
-<footer>EXC HUN VBL CLUB • Volleyball Legends • Együtt erősebbek vagyunk!</footer>
+<footer>© 2026 EXC HUN VBL CLUB</footer>
 <script src="script.js"></script>
 </body>
 </html>

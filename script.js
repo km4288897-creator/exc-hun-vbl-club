@@ -1,7 +1,1 @@
-function copyCode(code, button){
-  navigator.clipboard.writeText(code).then(()=>{
-    const old=button.textContent;
-    button.textContent="Kimásolva ✓";
-    setTimeout(()=>button.textContent=old,1200);
-  });
-}
+function copyCode(code){navigator.clipboard.writeText(code).then(()=>alert("Kimásolva: "+code)).catch(()=>{});}
