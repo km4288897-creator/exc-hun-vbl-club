@@ -1,4 +1,6 @@
 const db = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_KEY);
+
+// EXC HUN VBL CLUB – videók, lájkok és admin moderáció
 const BUCKET = "vbl-videos";
 
 function msg(id, text, bad=false){
@@ -71,6 +73,9 @@ async function likeVideo(videoId){
     return;
   }
   await loadVideos();
+db.auth.getSession().then(({data})=>{
+  if(data.session) loadPending();
+});
 }
 
 async function uploadVideo(){

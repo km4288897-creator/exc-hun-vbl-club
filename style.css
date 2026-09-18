@@ -10,3 +10,17 @@
 .upload-box input,.admin-box input{width:100%;box-sizing:border-box;margin:7px 0;padding:11px;border-radius:8px;border:1px solid #27415f;background:#0b1322;color:#eef6ff}
 .pending-item{background:#0b1322;border:1px solid #1b3857;border-radius:12px;padding:14px;margin:12px 0}
 .pending-item video{width:100%;max-width:500px;border-radius:8px;display:block;margin-bottom:10px}
+
+
+/* VIDEÓK + ADMIN */
+.video-section, .admin-box { margin: 28px auto; max-width: 1000px; }
+.video-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:18px; }
+.video-card, .pending-item { padding:16px; border-radius:16px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); }
+.video-card video, .pending-item video { width:100%; border-radius:12px; display:block; margin-bottom:12px; max-height:420px; }
+.video-actions { display:flex; align-items:center; gap:12px; margin-top:10px; }
+.upload-box { margin-top:24px; padding:18px; border-radius:16px; background:rgba(255,255,255,.04); }
+.upload-box input, .admin-box input { width:100%; box-sizing:border-box; margin:8px 0; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,.15); }
+.upload-box button, .admin-box button, .video-actions button, .pending-item button { padding:10px 14px; border:0; border-radius:10px; cursor:pointer; margin:5px 5px 5px 0; }
+.pending-item { margin:14px 0; }
+.muted { opacity:.75; }
+@media(max-width:600px){ .video-grid{grid-template-columns:1fr;} .nav{overflow-x:auto; white-space:nowrap;} }
