@@ -2,16 +2,11 @@
 .video-section{margin-top:35px}
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:18px}
 .video-card{background:#070d18;border:1px solid #1b3857;border-radius:14px;padding:14px}
-.video-card video{width:100%;border-radius:10px;display:block;background:#000}
+.video-card video{width:100%;border-radius:10px;background:#000;display:block}
 .video-card h3{margin:12px 0 8px}
 .video-actions{display:flex;align-items:center;gap:10px}
-.like-btn{background:#147de0}
-.like-btn.liked{background:#315d8a}
-.like-count{color:#c7d5e4;font-weight:700}
+.like-count{font-weight:700;color:#c7d5e4}
 .upload-box,.admin-box{margin-top:20px;padding:18px;background:#070d18;border:1px solid #1b3857;border-radius:12px}
 .upload-box input,.admin-box input{width:100%;box-sizing:border-box;margin:7px 0;padding:11px;border-radius:8px;border:1px solid #27415f;background:#0b1322;color:#eef6ff}
-.muted{color:#9db1c8}
 .pending-item{background:#0b1322;border:1px solid #1b3857;border-radius:12px;padding:14px;margin:12px 0}
 .pending-item video{width:100%;max-width:500px;border-radius:8px;display:block;margin-bottom:10px}
-#admin{display:none}
-@media(max-width:600px){.video-grid{grid-template-columns:1fr}}

@@ -94,23 +94,24 @@
   </a>
 </main>
 
+
 <section id="videos" class="card video-section">
   <h2>🎬 VBL VIDEÓK</h2>
-  <p class="muted">A videók ellenőrzés után jelennek meg.</p>
+  <p class="muted">A beküldött videókat először ellenőrizzük.</p>
   <div id="videoList" class="video-grid"><p class="muted">Betöltés...</p></div>
 
   <div class="upload-box">
-    <h3>Videó beküldése</h3>
+    <h3>📤 Videó beküldése</h3>
     <input id="title" maxlength="80" placeholder="Videó címe">
     <input id="file" type="file" accept="video/*">
-    <button onclick="uploadVideo()">Beküldés ellenőrzésre</button>
+    <button onclick="uploadVideo()">Beküldés</button>
     <p id="uploadMsg" class="muted"></p>
     <small>Maximum 50 MB.</small>
   </div>
 </section>
 
 <section id="admin" class="card admin-box">
-  <h2>🔐 Admin videókezelés</h2>
+  <h2>🔐 Admin</h2>
   <input id="email" type="email" placeholder="Admin e-mail">
   <input id="password" type="password" placeholder="Jelszó">
   <button onclick="login()">Belépés</button>
@@ -120,7 +121,6 @@
 </section>
 
 <footer>© 2026 EXC HUN VBL CLUB</footer>
-
 <script>
 window.SUPABASE_URL="https://ltlxdffptogvfkpytgib.supabase.co";
 window.SUPABASE_KEY="sb_publishable_QlUY6YEwD6-16VZIyEVmoA_UOb6wDo0";
