@@ -1,99 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EXC HUN VBL CLUB</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EXC HUN VBL CLUB</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <div class="hero-inner">
-    <div class="badge">ROBLOX • VOLLEYBALL LEGENDS</div>
-    <h1>EXC HUN VBL CLUB</h1>
-    <p>Magyar Volleyball Legends közösség</p>
-    <a class="dc-btn" href="https://discord.gg/tEkWNzSJa" target="_blank" rel="noopener">💬 Csatlakozás Discordhoz</a>
-  </div>
+<header>
+  <div class="tag">ROBLOX • VOLLEYBALL LEGENDS</div>
+  <h1>EXC HUN VBL CLUB</h1>
+  <p>Magyar Volleyball Legends közösség</p>
+  <a class="discord" href="https://discord.gg/tEkWNzSJa" target="_blank">💬 Discord</a>
 </header>
 
-<nav class="nav">
-  <a href="#home">Főoldal</a>
-  <a href="#update">UPDATE</a>
-  <a href="#codes">VBL KÓDOK</a>
-  <a href="#staff">STAFF</a>
+<nav>
+<a href="#update">UPDATE</a>
+<a href="#codes">VBL KÓDOK</a>
+<a href="#videos">VIDEÓK</a>
+<a href="#staff">STAFF</a>
+<a href="#admin">ADMIN</a>
 </nav>
 
-<main id="home" class="container">
-  <section class="welcome">
-    <h2>Üdv az EXC HUN VBL CLUB-ban!</h2>
-    <p>Itt megtalálod a legújabb Ronin update-et, a VBL kódokat és a szerver staffját.</p>
-  </section>
+<main>
+<section class="card" id="update">
+<button class="title" onclick="toggle('ronin')">🥷 UPDATE</button>
+<div id="ronin" class="hidden inner">
+<h2>🥷 Ronin</h2>
+<p>Az aktuális Volleyball Legends update: <b>Ronin</b>.</p>
+</div>
+</section>
 
-  <section id="update" class="card clickable">
-    <a href="#ronin" class="card-link">
-      <div class="icon">🥷</div>
-      <div>
-        <h2>UPDATE</h2>
-        <p>Kattints az új update megtekintéséhez.</p>
-      </div>
-    </a>
-  </section>
+<section class="card" id="codes">
+<button class="title" onclick="toggle('codesList')">🎟️ VBL KÓDOK</button>
+<div id="codesList" class="hidden inner">
+<div class="code"><b>UPDATE_87</b><span>5 Lucky Style Spins</span><button onclick="copyCode('UPDATE_87')">Másolás</button></div>
+<div class="code"><b>RONIN_RETURN</b><span>5 Lucky Style Spins</span><button onclick="copyCode('RONIN_RETURN')">Másolás</button></div>
+<div class="code"><b>KATANA</b><span>5 Lucky Ability Spins</span><button onclick="copyCode('KATANA')">Másolás</button></div>
+</div>
+</section>
 
-  <section id="ronin" class="detail">
-    <div class="tag">NEW UPDATE</div>
-    <h2>🥷 Ronin</h2>
-    <p>Az új Volleyball Legends update: <strong>Ronin</strong>.</p>
-  </section>
+<section class="card" id="videos">
+<h2>🎬 VBL VIDEÓK</h2>
+<p class="muted">A videó először ellenőrzésre kerül. Csak jóváhagyás után jelenik meg.</p>
+<div id="videoList" class="grid"><p class="muted">Betöltés...</p></div>
+<div class="upload">
+<h3>Videó beküldése</h3>
+<input id="title" maxlength="80" placeholder="Videó címe">
+<input id="file" type="file" accept="video/*">
+<button class="primary" onclick="uploadVideo()">Beküldés ellenőrzésre</button>
+<p id="uploadMsg"></p>
+<small>Maximum 50 MB.</small>
+</div>
+</section>
 
-  <section id="codes" class="card clickable">
-    <a href="#code-list" class="card-link">
-      <div class="icon">🎟️</div>
-      <div>
-        <h2>VBL KÓDOK</h2>
-        <p>Kattints ide a jelenlegi kódok megtekintéséhez.</p>
-      </div>
-    </a>
-  </section>
+<section class="card" id="staff">
+<h2>🛠️ STAFF</h2>
+<div class="staff"><span>OWNER</span><b>Exc_Kevin</b></div>
+<div class="staff"><span>DEVELOPER</span><b>Exc_Kevin</b></div>
+</section>
 
-  <section id="code-list" class="detail">
-    <div class="tag">NEW CODES</div>
-    <h2>🎟️ VBL Kódok</h2>
-    <div class="code-list">
-      <div class="code-row">
-        <code>UPDATE_87</code><span>5 Lucky Style Spins</span>
-        <button onclick="copyCode('UPDATE_87')">Másolás</button>
-      </div>
-      <div class="code-row">
-        <code>RONIN_RETURN</code><span>5 Lucky Style Spins</span>
-        <button onclick="copyCode('RONIN_RETURN')">Másolás</button>
-      </div>
-      <div class="code-row">
-        <code>KATANA</code><span>5 Lucky Ability Spins</span>
-        <button onclick="copyCode('KATANA')">Másolás</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="staff" class="staff-section">
-    <h2>STAFF</h2>
-    <div class="staff-grid">
-      <div class="staff-card">
-        <div class="role">OWNER</div>
-        <div class="name">Exc_Kevin</div>
-      </div>
-      <div class="staff-card">
-        <div class="role">DEVELOPER</div>
-        <div class="name">Exc_Kevin</div>
-      </div>
-    </div>
-  </section>
-
-  <a class="dc-wide" href="https://discord.gg/tEkWNzSJa" target="_blank" rel="noopener">
-    💬 Discord szerver megnyitása
-  </a>
+<section class="card admin" id="admin">
+<h2>🔐 Admin videókezelés</h2>
+<p class="muted">Csak a beállított admin fiókkal lehet jóváhagyni.</p>
+<input id="email" type="email" placeholder="Admin e-mail">
+<input id="password" type="password" placeholder="Jelszó">
+<button class="primary" onclick="login()">Belépés</button>
+<button onclick="logout()">Kijelentkezés</button>
+<p id="adminMsg"></p>
+<div id="pending"></div>
+</section>
 </main>
-
 <footer>© 2026 EXC HUN VBL CLUB</footer>
+<script>
+window.SUPABASE_URL="https://ltlxdffptogvfkpytgib.supabase.co";
+window.SUPABASE_KEY="sb_publishable_QlUY6YEwD6-16VZIyEVmoA_UOb6wDo0";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 </body>
 </html>
