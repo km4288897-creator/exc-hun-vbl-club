@@ -18,33 +18,18 @@
 
 <nav class="nav">
   <a href="#home">Főoldal</a>
-  <a href="#rolunk">RÓLUNK</a>
+  <a href="#about">RÓLUNK</a>
   <a href="#staff">STAFF</a>
+  <a href="#videos">VIDEÓK</a>
+  <a href="#admin">ADMIN</a>
 </nav>
 
 <main id="home" class="container">
   <section class="welcome">
     <h2>Üdv az EXC HUN VBL CLUB-ban!</h2>
-    <p>Itt megtalálod a legújabb Ronin update-et, a VBL kódokat és a szerver staffját.</p>
+    <p>Magyar Roblox Volleyball Legends közösség, videókkal és aktív Discord szerverrel.</p>
   </section>
-
-  <section id="rolunk" class="card about-section">
-    <div class="icon">🏐</div>
-    <div>
-      <h2>RÓLUNK – EXC HUN VBL CLUB</h2>
-      <p>Az EXC HUN VBL CLUB egy magyar Roblox Volleyball Legends közösség, amelynek célja, hogy összehozza a magyar VBL játékosokat. Közösségünkben a játékosok kapcsolatot teremthetnek egymással, megoszthatják videóikat, és egy aktív magyar VBL közösség részesei lehetnek.</p>
-      <p><strong>🎮 Amit képviselünk:</strong></p>
-      <ul>
-        <li>Magyar VBL közösség</li>
-        <li>Aktív Discord szerver</li>
-        <li>Közösségi videók</li>
-        <li>VBL-lel kapcsolatos tartalmak</li>
-        <li>Együtt játszó és fejlődő játékosok</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="staff" class="staff-section">
+<section id="staff" class="staff-section">
     <h2>STAFF</h2>
     <div class="staff-grid">
       <div class="staff-card">
@@ -58,12 +43,64 @@
     </div>
   </section>
 
+
+
+<section id="about" class="section about-section">
+  <div class="section-head">
+    <span class="section-tag">EXC HUN VBL CLUB</span>
+    <h2>🏐 Rólunk</h2>
+    <p>Ismerd meg az EXC HUN VBL CLUB közösségét.</p>
+  </div>
+  <div class="about-card">
+    <h3>🏐 Magyar Volleyball Legends közösség</h3>
+    <p>Az <strong>EXC HUN VBL CLUB</strong> egy magyar Roblox Volleyball Legends közösség, amelynek célja, hogy összehozza a magyar VBL játékosokat, és egy aktív, összetartó közösséget építsen.</p>
+    <p>A weboldalon és a Discord szerveren közösségi tartalmakat, VBL-lel kapcsolatos információkat és beküldött videókat találhatsz.</p>
+    <div class="about-grid">
+      <div>🏐 <b>VBL közösség</b><span>Magyar játékosok egy helyen</span></div>
+      <div>🎮 <b>Aktív Discord</b><span>Kapcsolat a közösség tagjaival</span></div>
+      <div>🎥 <b>Közösségi videók</b><span>Videók beküldése és megosztása</span></div>
+      <div>👥 <b>Közösségépítés</b><span>Együtt játszó és fejlődő játékosok</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="videos" class="card video-section">
+  <h2>🎬 VBL VIDEÓK</h2>
+  <p class="muted">A beküldött videókat először ellenőrizzük.</p>
+  <div id="videoList" class="video-grid"><p class="muted">Betöltés...</p></div>
+
+  <div class="upload-box">
+    <h3>📤 Videó beküldése</h3>
+    <input id="title" maxlength="80" placeholder="Videó címe">
+    <input id="file" type="file" accept="video/*">
+    <button onclick="uploadVideo()">Beküldés</button>
+    <p id="uploadMsg" class="muted"></p>
+    <small>Maximum 50 MB.</small>
+  </div>
+</section>
+
+<section id="admin" class="card admin-box">
+  <h2>🔐 Admin</h2>
+  <input id="email" type="email" placeholder="Admin e-mail">
+  <input id="password" type="password" placeholder="Jelszó">
+  <button onclick="login()">Belépés</button>
+  <button onclick="logout()">Kijelentkezés</button>
+  <p id="adminMsg" class="muted"></p>
+  <div id="pending"></div>
+</section>
+
   <a class="dc-wide" href="https://discord.gg/tEkWNzSJa" target="_blank" rel="noopener">
     💬 Discord szerver megnyitása
   </a>
 </main>
 
+
 <footer>© 2026 EXC HUN VBL CLUB</footer>
+<script>
+window.SUPABASE_URL="https://ltlxdffptogvfkpytgib.supabase.co";
+window.SUPABASE_KEY="sb_publishable_QlUY6YEwD6-16VZIyEVmoA_UOb6wDo0";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 </body>
 </html>
