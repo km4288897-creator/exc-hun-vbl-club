@@ -18,11 +18,8 @@
 
 <nav class="nav">
   <a href="#home">Főoldal</a>
-  <a href="#update">UPDATE</a>
-  <a href="#codes">VBL KÓDOK</a>
+  <a href="#rolunk">RÓLUNK</a>
   <a href="#staff">STAFF</a>
-  <a href="#videos">VIDEÓK</a>
-  <a href="#admin">ADMIN</a>
 </nav>
 
 <main id="home" class="container">
@@ -31,48 +28,19 @@
     <p>Itt megtalálod a legújabb Ronin update-et, a VBL kódokat és a szerver staffját.</p>
   </section>
 
-  <section id="update" class="card clickable">
-    <a href="#ronin" class="card-link">
-      <div class="icon">🥷</div>
-      <div>
-        <h2>UPDATE</h2>
-        <p>Kattints az új update megtekintéséhez.</p>
-      </div>
-    </a>
-  </section>
-
-  <section id="ronin" class="detail">
-    <div class="tag">NEW UPDATE</div>
-    <h2>🥷 Ronin</h2>
-    <p>Az új Volleyball Legends update: <strong>Ronin</strong>.</p>
-  </section>
-
-  <section id="codes" class="card clickable">
-    <a href="#code-list" class="card-link">
-      <div class="icon">🎟️</div>
-      <div>
-        <h2>VBL KÓDOK</h2>
-        <p>Kattints ide a jelenlegi kódok megtekintéséhez.</p>
-      </div>
-    </a>
-  </section>
-
-  <section id="code-list" class="detail">
-    <div class="tag">NEW CODES</div>
-    <h2>🎟️ VBL Kódok</h2>
-    <div class="code-list">
-      <div class="code-row">
-        <code>UPDATE_87</code><span>5 Lucky Style Spins</span>
-        <button onclick="copyCode('UPDATE_87')">Másolás</button>
-      </div>
-      <div class="code-row">
-        <code>RONIN_RETURN</code><span>5 Lucky Style Spins</span>
-        <button onclick="copyCode('RONIN_RETURN')">Másolás</button>
-      </div>
-      <div class="code-row">
-        <code>KATANA</code><span>5 Lucky Ability Spins</span>
-        <button onclick="copyCode('KATANA')">Másolás</button>
-      </div>
+  <section id="rolunk" class="card about-section">
+    <div class="icon">🏐</div>
+    <div>
+      <h2>RÓLUNK – EXC HUN VBL CLUB</h2>
+      <p>Az EXC HUN VBL CLUB egy magyar Roblox Volleyball Legends közösség, amelynek célja, hogy összehozza a magyar VBL játékosokat. Közösségünkben a játékosok kapcsolatot teremthetnek egymással, megoszthatják videóikat, és egy aktív magyar VBL közösség részesei lehetnek.</p>
+      <p><strong>🎮 Amit képviselünk:</strong></p>
+      <ul>
+        <li>Magyar VBL közösség</li>
+        <li>Aktív Discord szerver</li>
+        <li>Közösségi videók</li>
+        <li>VBL-lel kapcsolatos tartalmak</li>
+        <li>Együtt játszó és fejlődő játékosok</li>
+      </ul>
     </div>
   </section>
 
@@ -90,45 +58,12 @@
     </div>
   </section>
 
-
-
-<section id="videos" class="card video-section">
-  <h2>🎬 VBL VIDEÓK</h2>
-  <p class="muted">A beküldött videókat először ellenőrizzük.</p>
-  <div id="videoList" class="video-grid"><p class="muted">Betöltés...</p></div>
-
-  <div class="upload-box">
-    <h3>📤 Videó beküldése</h3>
-    <input id="title" maxlength="80" placeholder="Videó címe">
-    <input id="file" type="file" accept="video/*">
-    <button onclick="uploadVideo()">Beküldés</button>
-    <p id="uploadMsg" class="muted"></p>
-    <small>Maximum 50 MB.</small>
-  </div>
-</section>
-
-<section id="admin" class="card admin-box">
-  <h2>🔐 Admin</h2>
-  <input id="email" type="email" placeholder="Admin e-mail">
-  <input id="password" type="password" placeholder="Jelszó">
-  <button onclick="login()">Belépés</button>
-  <button onclick="logout()">Kijelentkezés</button>
-  <p id="adminMsg" class="muted"></p>
-  <div id="pending"></div>
-</section>
-
   <a class="dc-wide" href="https://discord.gg/tEkWNzSJa" target="_blank" rel="noopener">
     💬 Discord szerver megnyitása
   </a>
 </main>
 
-
 <footer>© 2026 EXC HUN VBL CLUB</footer>
-<script>
-window.SUPABASE_URL="https://ltlxdffptogvfkpytgib.supabase.co";
-window.SUPABASE_KEY="sb_publishable_QlUY6YEwD6-16VZIyEVmoA_UOb6wDo0";
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 </body>
 </html>
