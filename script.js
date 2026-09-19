@@ -178,6 +178,83 @@ async function loadPending(){
   }).join("");
 }
 
+async function loadAdminVideos(){
+  const a=await db.rpc("is_admin");
+  if(a.error || a.data!==true) return;
+
+  const q=await db.from("videos")
+    .select("*")
+    .eq("status","approved")
+    .order("created_at",{ascending:false});
+
+  const box=document.getElementById("pending");
+  if(!box) return;
+
+  let adminBox=document.getElementById("adminApproved");
+  if(!adminBox){
+    adminBox=document.createElement("div");
+    adminBox.id="adminApproved";
+    box.parentNode.appendChild(adminBox);
+  }
+
+  if(q.error){
+    adminBox.innerHTML='<p class="muted">Admin videólista hiba: '+esc(q.error.message)+'</p>';
+    return;
+  }
+
+  if(!q.data.length){
+    adminBox.innerHTML='<h3>🎬 Jóváhagyott videók</h3><p class="muted">Nincs jóváhagyott videó.</p>';
+    return;
+  }
+
+  adminBox.innerHTML='<h3>🎬 Jóváhagyott videók</h3>' + q.data.map(v=>{
+    const url=db.storage.from(BUCKET).getPublicUrl(v.file_path).data.publicUrl;
+    return `<div class="pending-item">
+      <video controls src="${esc(url)}"></video>
+      <h3>${esc(v.title)}</h3>
+      <button onclick="deleteVideo('${v.id}')">🗑️ Videó törlése</button>
+    </div>`;
+  }).join("");
+}
+
+async function deleteVideo(videoId){
+  const a=await db.rpc("is_admin");
+  if(a.error || a.data!==true){
+    msg("adminMsg","Ez a fiók nem admin.",true);
+    return;
+  }
+
+  if(!confirm("Biztosan törölni szeretnéd ezt a videót? Ez végleges!")) return;
+
+  const q=await db.from("videos")
+    .select("file_path")
+    .eq("id",videoId)
+    .single();
+
+  if(q.error){
+    msg("adminMsg","A videó nem található: "+q.error.message,true);
+    return;
+  }
+
+  const removeFile=await db.storage.from(BUCKET).remove([q.data.file_path]);
+
+  if(removeFile.error){
+    msg("adminMsg","A videófájl törlése sikertelen: "+removeFile.error.message,true);
+    return;
+  }
+
+  const del=await db.from("videos").delete().eq("id",videoId);
+
+  if(del.error){
+    msg("adminMsg","Az adatbázisból nem sikerült törölni: "+del.error.message,true);
+    return;
+  }
+
+  msg("adminMsg","✅ A videó véglegesen törölve.");
+  await loadAdminVideos();
+  await loadVideos();
+}
+
 async function moderate(id,status){
   const r=await db.from("videos").update({status}).eq("id",id);
   if(r.error){
@@ -185,11 +262,15 @@ async function moderate(id,status){
     return;
   }
   await loadPending();
+  await loadAdminVideos();
   await loadVideos();
 }
 
 db.auth.onAuthStateChange(event=>{
-  if(event==="SIGNED_IN") loadPending();
+  if(event==="SIGNED_IN"){
+    loadPending();
+    loadAdminVideos();
+  }
 });
 
 loadVideos();
